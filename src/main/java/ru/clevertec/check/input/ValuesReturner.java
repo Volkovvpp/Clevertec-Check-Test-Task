@@ -45,7 +45,10 @@ public class ValuesReturner {
         int discountNum = inputProductsForCheck.getDiscountCardNum();
 
         if (discountCardMap.containsKey(discountNum)) discountCard = discountCardMap.get(discountNum);
-        else discountCard = new DefaultCard();
+        else {
+            discountCard = new DefaultCard();
+            DefaultCard.setName(String.valueOf(discountNum));
+        }
 
         debitBalance = inputProductsForCheck.getDebitBalance();
     }

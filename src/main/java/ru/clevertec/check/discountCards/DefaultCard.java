@@ -1,8 +1,11 @@
 package main.java.ru.clevertec.check.discountCards;
 
 public class DefaultCard implements DiscountCard{
-    public static double discountAmount = 0.02;
-    private String name;
+    private static String name;
+
+    public static void setName(String name) {
+        DefaultCard.name = name;
+    }
 
     @Override
     public void addValues(double discountAmount, String name) {
@@ -11,7 +14,7 @@ public class DefaultCard implements DiscountCard{
 
     @Override
     public double getDiscountAmount() {
-        return discountAmount;
+        return 0.02;
     }
 
     @Override
