@@ -27,7 +27,7 @@ public class CheckCounter {
         ValuesReturner valuesReturner = new ValuesReturner(inputString);
         List<Product> productList = valuesReturner.getProductList();
         discountCard = valuesReturner.getDiscountCard();
-        int balance = valuesReturner.getDebitBalance();
+        double balance = valuesReturner.getDebitBalance();
 
         for (Product product : productList) {
             ValueForWrite valueForWrite = new ValueForWrite();

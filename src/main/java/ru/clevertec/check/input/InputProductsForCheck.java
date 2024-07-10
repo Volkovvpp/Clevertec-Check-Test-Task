@@ -14,7 +14,7 @@ public class InputProductsForCheck {
 
     private Integer discountCardNum = null;
 
-    private int debitBalance;
+    private double debitBalance;
     private String pathToFile;
     private String saveToFile;
 
@@ -31,7 +31,7 @@ public class InputProductsForCheck {
         return discountCardNum;
     }
 
-    public int getDebitBalance() {
+    public double getDebitBalance() {
         return debitBalance;
     }
 
@@ -61,11 +61,11 @@ public class InputProductsForCheck {
             discountCardNum = Integer.parseInt(cardMatcher.group(1));
         }
 
-        Pattern balancePattern = Pattern.compile("balanceDebitCard=(\\d+)");
+        Pattern balancePattern = Pattern.compile("balanceDebitCard=(-?\\d+(\\.\\d+)?)");
         Matcher balanceMatcher = balancePattern.matcher(inputString);
 
         if (balanceMatcher.find()) {
-            debitBalance = Integer.parseInt(balanceMatcher.group(1));
+            debitBalance = Double.parseDouble(balanceMatcher.group(1));
         }
 
         Pattern pathToFilePattern = Pattern.compile("pathToFile=(\\S+)");

@@ -7,6 +7,7 @@ import main.java.ru.clevertec.check.products.Product;
 import main.java.ru.clevertec.check.reader_writer.DiscountCardReader;
 import main.java.ru.clevertec.check.reader_writer.ProductReader;
 
+import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
@@ -15,7 +16,7 @@ public class ValuesReturner {
     private final InputProductsForCheck inputProductsForCheck;
     private List<Product> productList = new ArrayList<>();
     private DiscountCard discountCard;
-    private int debitBalance;
+    private double debitBalance;
 
     public ValuesReturner(String inputString) throws BadRequestException {
         inputProductsForCheck = new InputProductsForCheck(inputString);
@@ -61,7 +62,7 @@ public class ValuesReturner {
         return discountCard;
     }
 
-    public int getDebitBalance() {
+    public double getDebitBalance() {
         return debitBalance;
     }
 }
